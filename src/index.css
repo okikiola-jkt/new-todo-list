@@ -1,36 +1,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
-/* base styles */
-* {
+*{
   margin: 0;
-  font-family: "Quicksand";
-  color: #333;
-  background-color: aqua; 
+  padding: 0;
   box-sizing: border-box;
 }
 
+body {
 
-
-.home-page{
-  text-align: center;
-  margin: 200px;
-  
-  
+  font-family: "Quicksand";
+  color: #333;
+  background-color: aqua; 
+  min-height: 100%;
 }
 
-.home-page h1{
-  font-size: 70px;
+header{
+  font-size: 25px;
+}
+
+  header, form {
+    justify-content: center;
+    min-height: 20vh;
+    display: flex;
+    align-items: center;
 }
 
 form input,
 form button {
-padding: 8px; 
-padding-left: 16px; 
-font-size: 30px; 
-border: none;
-background: white;
-border-radius: 20px;
+      padding: 8px; 
+      padding-left: 16px; 
+      font-size: 30px; 
+      border: none;
+      background: white;
+      border-radius: 20px;
 
+
+    }
+
+    form button {
+      color: black;
+      background-color: white;
+      cursor: pointer;
+      transition: all 0.3 ease;
+      margin-left: 5px;
+  }
+
+
+
+  form button:hover{
+    color: white;
+    background-color: rgb(65, 29, 172);
 
 }
+
+.fa-plus-circle {
+  margin-top: 3px;
+  margin-left: -8px;
+}
+
+textarea {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+select {
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+
+}
+
+select {
+  color: black;
+  width: 10rem;
+  height: 3.2rem;
+  cursor: pointer;
+  padding: 1rem;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+}
+
+
+
+
+
