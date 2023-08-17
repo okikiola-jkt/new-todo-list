@@ -23,28 +23,28 @@ header{
   font-size: 35px;
 }
 
- header, form {
+ header {
     justify-content: center;
     min-height: 20vh;
     display: flex;
     align-items: center;
 } 
 
-      input {
+     input {
       padding: 8px; 
       font-size: 30px; 
       border: none;
       background: white;
       border-radius: 20px;
       outline: none;
-      margin: 20px;
+      margin: 20px auto;
 
     }
 
-    button {
+    .todo-button {
       color: black;
       background: white;
-      padding: 5px; 
+      padding: 8px; 
       font-size: 25px; 
       border-radius: 20px;
       cursor: pointer;
@@ -55,25 +55,31 @@ header{
 
 
 
-  form button:hover{
+  .todo-button:hover{
     color: white;
     background-color: rgb(9, 5, 23);
 
 }
 
+
+
 li{
   font-size: 30px;
-  margin: 20px, auto;
+  
 }
 
 li button{
   background: none;
   outline: none;
   border: none;
+  padding: 4px;
+
+
 }
 
-
-
-
+.delete-icon{
+  font-size: 15px;
+  cursor: pointer;
+}
 
 

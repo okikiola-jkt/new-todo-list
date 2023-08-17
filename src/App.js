@@ -2,26 +2,34 @@ import React from "react";
 import { useState } from "react";
 
 function App() {
-
   const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([]);
-
-    function addItem(){
-      if (!newItem){
-        alert("Enter an item")
-      }
-      const item = {
-        id: Math.floor(Math.random() * 1000),
-        value: newItem
-      };
-
-      setItems(oldList => [...oldList, item]);
-      setNewItem("");
+  
+  function addItem() {
+    if (!newItem.trim()) {
+      alert("Enter an item");
+      return;
     }
-    function deleteItem(id){
-      const newArray = items.filter(item => item.id !== id);
-      setItems(newArray)
+    const item = {
+      id: Math.floor(Math.random() * 1000),
+      value: newItem
+    };
+
+    setItems(oldList => [...oldList, item]);
+    setNewItem("");
+  }
+
+  function deleteItem(id) {
+    const newArray = items.filter(item => item.id !== id);
+    setItems(newArray);
+  }
+
+  // Handle Enter key press
+  function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      addItem();
     }
+  }
   return (
     <div className="App">
          <header>
@@ -34,15 +42,17 @@ function App() {
               placeholder="Add new item..."
               value={newItem}
               onChange={e => setNewItem(e.target.value)} 
+              onKeyPress={handleKeyPress}
             />
-            <button onClick={() => addItem()} className="todo-button">Add</button>
+
+            <button onClick={() => addItem()} className="todo-button" >Add</button>
           
           
         
               <ul className="todo-list">
                 {items.map(item => {
                   return(
-                    <li key={item.id}>{item.value} <button onClick={() => deleteItem(item.id)}>❌</button></li>
+                    <li key={item.id}>{item.value} <button onClick={() => deleteItem(item.id)} className="delete-icon">❌</button></li>
                   )
                 } )}
               </ul>
