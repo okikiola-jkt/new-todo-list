@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from "react";
 
-function App() {
+const App = () => {
   const [newItem, setNewItem] = useState("");
   const [items, setItems] = useState([]);
   
-  function addItem() {
-    if (!newItem.trim()) {
+  const handleAddItem = (event) => {
+    event.preventDefault();
+
+    if (newItem.trim() == '') {
       alert("Enter an item");
       return;
     }
@@ -19,33 +21,35 @@ function App() {
     setNewItem("");
   }
 
-  function deleteItem(id) {
+  const deleteItem = (id) => {
     const newArray = items.filter(item => item.id !== id);
     setItems(newArray);
   }
 
   // Handle Enter key press
-  function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-      addItem();
-    }
-  }
+  // const handleKeyPress = (event) => {
+  //   if (event.key === 'Enter') {
+  //     addItem();
+  //   }
+  // }
+
   return (
     <div className="App">
          <header>
             <h1>My Todo List</h1>
           </header>
-          
-            <input 
-              type="text" 
-              className="todo-input" 
+
+          <form onSubmit={handleAddItem}>
+            <input
+              type="text"
+              className="todo-input"
               placeholder="Add new item..."
               value={newItem}
-              onChange={e => setNewItem(e.target.value)} 
-              onKeyPress={handleKeyPress}
+              onChange={e => setNewItem(e.target.value)}
             />
 
-            <button onClick={() => addItem()} className="todo-button" >Add</button>
+            <button className="todo-button" >Add</button>
+          </form>
           
           
         
