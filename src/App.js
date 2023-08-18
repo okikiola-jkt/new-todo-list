@@ -26,12 +26,6 @@ const App = () => {
     setItems(newArray);
   }
 
-  // Handle Enter key press
-  function handleKeyPress(event) {
-    if (event.key === 'Enter') {
-      addItem();
-    }
-  }
   return (
     <div className="App">
          <header>
@@ -47,7 +41,8 @@ const App = () => {
               onChange={e => setNewItem(e.target.value)}
             />
 
-            <button onClick={() => addItem()} className="todo-button" >Add</button>
+            <button className="todo-button" >Add</button>
+          </form>
           
           
         
